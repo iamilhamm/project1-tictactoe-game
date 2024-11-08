@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #8c52ff;
+    min-height: 100vh;
+}
+
+header {
+    background-color: pink;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid pink;
+}
+
+header h1 {
+    color: white;
+    font-size: 42px;
+    text-transform: uppercase;
+    text-shadow: -4px 1px pink;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    border-collapse: collapse;
+}
+
+.cell {
+    position: relative;
+    border: 1px solid black;
+    width: 100px;
+    padding-top: 100%; 
+    cursor: pointer;
+}
+
+.cell.x,
+.cell.o {
+    cursor: not-allowed;
+}
+
+
+.cell.x::before,
+.cell.x::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 90px;
+    background-color: black;
+    transform: translate(-50%, -50%);
+}
+
+.cell.x::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.cell.x::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+.cell.o::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 10px solid black;
+    border-radius: 50%;
+}
+
+
+.board.turn-x .cell:not(.x):not(.o):hover::before,
+.board.turn-x .cell:not(.x):not(.o):hover::after {
+    background-color: grey;
+}
+
+.board.turn-o .cell:not(.x):not(.o):hover::before {
+    border-color: grey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
